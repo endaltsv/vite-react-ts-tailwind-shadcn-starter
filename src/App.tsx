@@ -1,14 +1,17 @@
-import "./App.css";
-import { Button } from "./components/ui/button";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import OtherPage from './pages/OtherPage';
+import NotFound from './pages/NotFound';
+import Homepage from './pages/HomePage';
 
 function App() {
   return (
     <>
-      <div className="bg-blue-500">
-        <h1 className="text-2xl">Hello World</h1>
-      </div>
-
-      <Button>Hello World</Button>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/other-page" element={<OtherPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
